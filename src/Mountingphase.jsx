@@ -1,8 +1,11 @@
+//mounting phase 
+
 import React from "react";
 
 class Mountingphase extends React.Component {
 
 
+  //1st phase-constructor
   constructor(props) {
     console.log(" called constructor");
     super(props);
@@ -10,6 +13,8 @@ class Mountingphase extends React.Component {
    
   }
 
+
+  //2nd phase-getDerivedStateFromProps
   // static getDerivedStateFromProps(props, state) {
   //   console.log("getDerivedStateFromProps");
   //    if (props.name != state.name) {
@@ -19,13 +24,9 @@ class Mountingphase extends React.Component {
   //   }
   // }
 
-  componentDidMount() {
-    console.log("componentDidMount");
-    setTimeout(() => {
-      this.setState({ name: "Bini" });
-    }, 2000);
-  }
+ 
 
+  //3rd phase-render
   render() {
     console.log("render");
     return (
@@ -34,6 +35,14 @@ class Mountingphase extends React.Component {
         <h2>My name is {this.state.name}</h2>
       </div>
     );
+  }
+
+  //4thphase-componentDidMount
+   componentDidMount() {
+    console.log("componentDidMount");
+    setTimeout(() => {
+      this.setState({ name: "Bini" });
+    }, 2000);
   }
 }
 
